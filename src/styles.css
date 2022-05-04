@@ -1,0 +1,13 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.wrapper {
+  width: 400px;
+  height: 550px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: blue;
+  color: white;
+}
