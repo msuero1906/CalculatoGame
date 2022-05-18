@@ -1,16 +1,44 @@
 import "./styles.css";
 import { useState } from "react";
 
-const ResultScreen = () => {
-  return <div>Result!</div>;
+const ResultScreen = (props) => {
+  return <div className="result-screen">{props.equation}</div>;
 };
+
+/*
+const add  = (a, b) => a + b;
+
+add(1, 2);
+*/
 
 const Button = (props) => {
   return (
-    <div>
+    <div className="buttons">
       {props.buttonsArray.map((elem) => {
         return (
-          <button onClick={() => console.log("Button Clicked")}>{elem}</button>
+          <button
+            onClick={() => {
+              console.log("Button Clicked");
+              if (elem === "Clear") {
+                // If the elem I clicked is "Clear"
+                return props.numbersDisplay("");
+              }
+
+              if (elem === "=") {
+                // ??
+                return props.numbersDisplay((previousDisplay) =>
+                  eval(previousDisplay)
+                );
+              }
+
+              props.numbersDisplay((previousDisplay) => {
+                // `${}` <- string templates
+                return `${previousDisplay}${elem}`;
+              });
+            }}
+          >
+            {elem}
+          </button>
         );
       })}
     </div>
@@ -22,6 +50,7 @@ export default function App() {
   const [numbers, setNumbers] = useState(0);
   const [operations, setOperations] = useState("");
   const [result, setResult] = useState(0);
+  const [display, setDisplay] = useState("");
   const buttonsArray = [
     1,
     2,
@@ -45,8 +74,8 @@ export default function App() {
       <h1>Calculator</h1>
       <div className="wrapper">
         <h1>Calculator Container</h1>
-        <ResultScreen />
-        <Button buttonsArray={buttonsArray} />
+        <ResultScreen equation={display} />
+        <Button buttonsArray={buttonsArray} numbersDisplay={setDisplay} />
       </div>
     </div>
   );

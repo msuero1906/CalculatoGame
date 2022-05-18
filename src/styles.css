@@ -11,3 +11,14 @@
   background-color: blue;
   color: white;
 }
+
+.result-screen {
+  width: 355px;
+  background-color: white;
+  padding: 20px;
+  color: black;
+}
+
+.buttons {
+  padding: 16px;
+}
