@@ -5,27 +5,22 @@ const ResultScreen = (props) => {
   return <div className="result-screen">{props.equation}</div>;
 };
 
-/*
-const add  = (a, b) => a + b;
-
-add(1, 2);
-*/
-
 const Button = (props) => {
   return (
     <div className="buttons">
-      {props.buttonsArray.map((elem) => {
+      {props.buttonsArray.map((elem, idx) => {
         return (
           <button
+            // className={idx > 9 ? `operators` : `numbers`}
+            className="btn"
             onClick={() => {
-              console.log("Button Clicked");
               if (elem === "Clear") {
                 // If the elem I clicked is "Clear"
                 return props.numbersDisplay("");
               }
 
               if (elem === "=") {
-                // ??
+                // If the elem is == then evaluate the expression
                 return props.numbersDisplay((previousDisplay) =>
                   eval(previousDisplay)
                 );
@@ -33,6 +28,7 @@ const Button = (props) => {
 
               props.numbersDisplay((previousDisplay) => {
                 // `${}` <- string templates
+                // shows first entered number or operation and then what is input next
                 return `${previousDisplay}${elem}`;
               });
             }}
@@ -47,9 +43,7 @@ const Button = (props) => {
 
 export default function App() {
   // State changes: numbers, operations, result
-  const [numbers, setNumbers] = useState(0);
-  const [operations, setOperations] = useState("");
-  const [result, setResult] = useState(0);
+
   const [display, setDisplay] = useState("");
   const buttonsArray = [
     1,

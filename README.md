@@ -1,2 +1,3 @@
-# CalculatoGame
+# CalculatorGame
+
 Created with CodeSandbox

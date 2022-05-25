@@ -20,5 +20,21 @@
 }
 
 .buttons {
-  padding: 16px;
+  padding: 55px;
+  min-width: 200px;
+  margin: 30px 90px 30px 42px;
 }
+
+.btn {
+  padding: 5px;
+  min-width: 50px;
+  min-height: 50px;
+}
+
+/* .numbers {
+  color: red;
+}
+
+.operators {
+  color: purple;
+} */
