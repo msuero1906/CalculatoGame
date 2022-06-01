@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monoton&family=Special+Elite&display=swap");
 
 .App {
-  font-family: "Special Elite", cursive;
+  font-family: "Monoton", cursive;
   text-align: center;
 }
 
@@ -19,11 +19,12 @@
   background-color: floralwhite;
   padding: 20px;
   color: maroon;
+  font-family: "Special Elite", cursive;
 }
 
 .buttons {
   padding: 55px;
-  min-width: 250px;
+  min-width: 280px;
   margin: 0px 90px 30px 20px;
 }
 
